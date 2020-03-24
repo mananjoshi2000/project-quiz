@@ -1,8 +1,37 @@
-var count = 0,currentQ = 0;
+var count = 0,currentQ = 6;
+var S = 0,N = 0;
 
 // Disabling other checkboxes
 var ans1 = document.getElementById('ans1');
 var ans2 = document.getElementById('ans2');
+
+// document.getElementById('ans1').addEventListener('mouseenter',(e)=>{
+//     e.target.checked = true;
+// });
+
+// document.getElementById('ans1').addEventListener('mouseleave',(e)=>{
+//     e.target.checked = false;
+// });
+
+// document.getElementById('ans2').addEventListener('mouseenter',(e)=>{
+//     e.target.checked = true;
+// });
+
+// document.getElementById('ans2').addEventListener('mouseleave',(e)=>{
+//     e.target.checked = false;
+// });
+
+document.getElementById('playagainbutton').onclick = function(){
+    currentQ = 0;
+    document.getElementById('score').style.display = 'none';
+    document.querySelector('#ques').style.display = 'block';
+    document.getElementById('playagainbutton').style.display = 'none';
+    document.getElementById('nextbutton').textContent = 'Next Question';
+    nextquestion(currentQ);
+    count = 0;
+}  
+
+
 
 document.getElementById('ans1').onclick = function(){
     if(ans1.checked)
@@ -18,27 +47,51 @@ document.getElementById('ans2').onclick = function(){
     if(!ans2.checked)                                               
         ans1.disabled = false;
 }   
+document.getElementById('submitbutton').onclick = function(){
+            
+        if(S===N)
+        {
+            if(ans1.checked == false && ans2.checked == false){
+                alert('Please select an option');
+                return;
+            }
+
+            var answer = QU[currentQ].ans;
+            //console.log(answer);
+            var ans = document.querySelector('input[type=checkbox]:checked');
+            if(ans.value == answer){
+                document.getElementById('check').textContent = "CORRECT";  
+                count = count + 1;
+            }
+            else{
+                document.getElementById('check').textContent = "WRONG";
+                // ques.style.display = "none";   
+            }
+            ans1.disabled = true;
+            ans2.disabled = true;
+
+            currentQ = currentQ + 1;
+            S++;
+        }
+        else
+        {
+            alert("Please move to next question");
+        }    
+}        
 
 // After Submit
-document.getElementById('button').onclick = function(){
-    if(ans1.checked == false && ans2.checked == false){
-        alert('Please select an option');
-        return;
+document.getElementById('nextbutton').onclick = function(){
+   
+    if(S===N+1)
+    {
+        document.getElementById('check').textContent = "";
+        N++; 
+        nextquestion(currentQ);
     }
-
-    var answer = QU[currentQ].ans;
-    console.log(answer);
-    var ans = document.querySelector('input[type=checkbox]:checked');
-    if(ans.value == answer){
-        // ques.style.display = "none";
-        count = count + 1;
-    }
-    else{
-        // ques.style.display = "none";   
-    }
-    currentQ = currentQ + 1;
-    nextquestion(currentQ);
-        
+    else
+    {
+        alert("Please submit the answer");
+    }        
 }
 
 function nextquestion(currentQ){
@@ -50,10 +103,10 @@ function nextquestion(currentQ){
 
     if(currentQ == QU.length)
     {   
-        var A = document.querySelector('#notbutton');
-        A.style.display = 'none';
+        document.querySelector('#ques').style.display = 'none';
         document.querySelector('#score').textContent = 'Your Score :' + ' ' + count + ' out of ' + QU.length;
-        return;
+        document.querySelector('#score').style.display = 'block';
+        document.getElementById('playagainbutton').style.display = 'block';
     }
     else{
     var Qno = currentQ + 1;
@@ -63,6 +116,11 @@ function nextquestion(currentQ){
     document.querySelector('#option2').textContent = QU[currentQ].option2;
     answer = QU[currentQ].ans;
     }
+if(currentQ == QU.length - 1)
+{
+    document.getElementById('nextbutton').textContent = 'Finish';
+}
+
 }
 
 

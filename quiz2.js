@@ -1,5 +1,7 @@
 var QU = [
-    {
+    {   question : "Which of the following movies follows 3 main interrelated storylines??",
+        option1 : "Pulp Fiction",
+        option2 : "Scent of a woman",
         ans : "1"
     },
     {

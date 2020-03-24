@@ -36,6 +36,13 @@ p{
     margin-left: 10%;
 }
 
+#intro{
+    font-family: cursive;
+    text-align: center;
+    font-size: 25px;
+    margin-left: 0%;
+}
+
 #ans1{
     float: left;      
 }
@@ -63,6 +70,14 @@ p{
     margin-top: 0px;
 }
 
+#check{
+    font-size: 30px;
+    /* float: left; */
+    position: absolute;
+    top: 120%;
+    left: 20%;
+    
+}    
 
 input{
     border-top: 10px;
@@ -82,13 +97,29 @@ button{
     background-color: teal;
     width: 120px;
     height: 30px;
-    margin-top: 10px;
+    left: 30px;
+    /* position: relative; */
     float: left;
+    margin-top: 10px;
     margin-left: 35px;
 }
+
+#playagainbutton{
+    display: none;
+    position: absolute;
+    left: 33%;
+    top: 120%;
+}
+
+#playbutton{
+    position: absolute;
+    left: 33%;
+    top: 120%;
+}
+
 button:hover{
     background-color: olivedrab;
-    transition-delay: 0.1s;
+    transition-delay: 0.05s;
 }
 button:active{
     transform: translate(0,-8%);
