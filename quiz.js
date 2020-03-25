@@ -1,4 +1,4 @@
-var count = 0,currentQ = 6;
+var count = 0,currentQ = 0;
 var S = 0,N = 0;
 
 // Disabling other checkboxes
@@ -108,13 +108,14 @@ function nextquestion(currentQ){
         document.querySelector('#score').style.display = 'block';
         document.getElementById('playagainbutton').style.display = 'block';
     }
-    else{
-    var Qno = currentQ + 1;
-    document.querySelector('#Q').textContent = 'Q.' + Qno;
-    document.querySelector('#QT').textContent = QU[currentQ].question;
-    document.querySelector('#option1').textContent = QU[currentQ].option1;
-    document.querySelector('#option2').textContent = QU[currentQ].option2;
-    answer = QU[currentQ].ans;
+    else
+    {
+        var Qno = currentQ + 1;
+        document.querySelector('#Q').textContent = 'Q.' + Qno +'.';
+        document.querySelector('#QT').textContent = QU[currentQ].question;
+        document.querySelector('#option1').textContent = QU[currentQ].option1;
+        document.querySelector('#option2').textContent = QU[currentQ].option2;
+        answer = QU[currentQ].ans;
     }
 if(currentQ == QU.length - 1)
 {
@@ -123,8 +124,19 @@ if(currentQ == QU.length - 1)
 
 }
 
+window.addEventListener('mousemove',(e)=>{
 
+    var X=Math.floor(e.offsetX/15);
+   var Y=Math.floor(e.offsetY/7);
+  // e.offsetT
+//    var A=e.offsetX/3080 + 0.3;
+//    var B=e.offsetY/1460 + 0.3;
+   //console.log(X);
+   document.querySelector('.image').style.backgroundImage =  `linear-gradient(to right,rgba(${X}, 20, ${Y}, 0.5),rgba(${X}, 20, ${Y}, 0.5)),url("image.jpg")`;
+//    document.querySelector('.image').style.backgroundImage.transitionDelay = '0.6s'; 
+    //document.querySelector('h1').textContent = e.offsetX + '&&' + e.offsetY;
 
+});
 
 
 

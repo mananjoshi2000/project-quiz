@@ -7,7 +7,7 @@
     -moz-user-select: none;
 }
 .image{
-    background-image: linear-gradient(to top,rgba(31, 22, 26, 0.8),rgba(31, 22, 26, 0.8)), url("https://pics.freeartbackgrounds.com/fullhd/Morning_Sea_and_Boat_Background-318.jpg");
+    background-image: linear-gradient(to right,rgba(10, 22, 26, 0.6),rgba(10, 22, 26, 0.6)), url("image.jpg");
     background-position: center;
     background-size: cover;
     height: 100vh;
@@ -17,16 +17,44 @@
    
 }
 
+#intro{
+    width: 57%;
+    
+    text-align: center;
+    
+    margin-left: 0%;
+}
+
+.classintro2{
+    font-family: cursive;
+    font-size: 25px;
+    color: rgb(230, 169, 18);
+    /* font-weight: bold; */
+}
+
+.classintro1{
+    font-family: cursive;
+    font-size: 27px;
+    color: rgb(196, 231, 71);
+    font-weight: 510;
+}
 
 #ques{
+    font-size: 18px;
     width: 550px;
     margin-left: 5%;
-    color: brown;
+    color: rgba(223, 247, 7, 0.747);
 }
 
 #Q{
     float: left;
-    color: aliceblue;
+    color: rgb(218, 164, 164);
+}
+
+#QT{
+    position: relative;
+    text-align: left;
+    margin-left: 50px;
 }
 
 p{
@@ -36,12 +64,7 @@ p{
     margin-left: 10%;
 }
 
-#intro{
-    font-family: cursive;
-    text-align: center;
-    font-size: 25px;
-    margin-left: 0%;
-}
+
 
 #ans1{
     float: left;      
@@ -60,10 +83,10 @@ p{
     color : cornsilk;
 }
 
-
 .answer{
+    font-weight: bold;
     width: 400px;
-    color: blueviolet;
+    color: rgb(250, 172, 3);
     font-size: 20px;
     float: left;
     margin-left: 6%;
@@ -74,7 +97,7 @@ p{
     font-size: 30px;
     /* float: left; */
     position: absolute;
-    top: 120%;
+    top: 115%;
     left: 20%;
     
 }    
@@ -92,9 +115,10 @@ input{
 button{
     outline: none;
     font-size: 15px;
+    font-weight: bold;
     font-family: sans-serif;
     color: wheat;
-    background-color: teal;
+    background-color: rgba(167, 15, 15, 0.993);
     width: 120px;
     height: 30px;
     left: 30px;
@@ -113,12 +137,13 @@ button{
 
 #playbutton{
     position: absolute;
-    left: 33%;
-    top: 120%;
+    left: 18%;
+    top: 105%;
+    
 }
 
 button:hover{
-    background-color: olivedrab;
+    background-color: rgba(150, 140, 3, 0.945);
     transition-delay: 0.05s;
 }
 button:active{
@@ -131,8 +156,3 @@ h1{
     font-size: 50px;
 }
 
-#QT{
-    position: relative;
-    text-align: left;
-    margin-left: 50px;
-}
