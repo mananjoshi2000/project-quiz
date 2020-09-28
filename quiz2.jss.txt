@@ -1,0 +1,17 @@
+var QU = [
+    {
+        ans : "1"
+    },
+    {
+        question : "HI MANAN JOSHI HERE",
+        option1 : "ASD",
+        option2 : "ASD",
+        ans : "2"
+    },
+    {
+        question : "HELLO MANAN",
+        option1 : "ZXC",
+        option2 : "ZXC",
+        ans : "1"
+    }
+];

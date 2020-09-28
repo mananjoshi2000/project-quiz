@@ -126,17 +126,16 @@ if(currentQ == QU.length - 1)
 
 window.addEventListener('mousemove',(e)=>{
 
-    var X=Math.floor(e.offsetX/15);
-   var Y=Math.floor(e.offsetY/7);
+    var X=Math.floor(e.clientX/6);
+   var Y=Math.floor(e.clientY/4);
   // e.offsetT
 //    var A=e.offsetX/3080 + 0.3;
 //    var B=e.offsetY/1460 + 0.3;
-   //console.log(X);
+//    console.log(X,Y);
    document.querySelector('.image').style.backgroundImage =  `linear-gradient(to right,rgba(${X}, 20, ${Y}, 0.5),rgba(${X}, 20, ${Y}, 0.5)),url("image.jpg")`;
 //    document.querySelector('.image').style.backgroundImage.transitionDelay = '0.6s'; 
     //document.querySelector('h1').textContent = e.offsetX + '&&' + e.offsetY;
-
-});
+   });
 
 
 
