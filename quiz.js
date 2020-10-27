@@ -5,6 +5,28 @@ var S = 0,N = 0;
 var ans1 = document.getElementById('ans1');
 var ans2 = document.getElementById('ans2');
 
+// The below give code is to make the button work like spring 
+// code taken from one of the examples on popmotion.io
+const ball = document.querySelector(".animationbutton");
+const divStyler = popmotion.styler(ball);
+const ballXY = popmotion.value({ x: 0, y: 0 }, divStyler.set);
+
+popmotion.listen(ball, "mousedown touchstart").start(e => {
+  e.preventDefault();
+  popmotion.pointer(ballXY.get()).start(ballXY);
+});
+
+popmotion.listen(document, "mouseup").start(() => {
+  popmotion
+    .spring({
+      from: ballXY.get(),
+      velocity: ballXY.getVelocity(),
+      to: { x: 0, y: 0 },
+      stiffness: 200
+    })
+    .start(ballXY);
+});
+
 // document.getElementById('ans1').addEventListener('mouseenter',(e)=>{
 //     e.target.checked = true;
 // });
