@@ -73,6 +73,10 @@ p{
 #ans2{
     float: left;   
 }
+#TITLE:hover  {
+    color: #39ff14;
+    text-shadow: 2px 0 0 red;
+}
 
 #text{
     text-align: center;
